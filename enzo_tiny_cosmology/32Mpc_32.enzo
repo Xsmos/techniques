@@ -1,0 +1,110 @@
+
+# method paper parameter study parameter file
+#
+ProblemType                = 30
+TopGridRank                = 3
+SelfGravity                = 1
+TopGridGravityBoundary     = 0
+LeftFaceBoundaryCondition  = 3 3 3
+RightFaceBoundaryCondition = 3 3 3
+BaryonSelfGravityApproximation = 1
+TopGridDimensions = 32 32 32
+
+#
+#  problem parameters
+#
+CosmologySimulationOmegaBaryonNow       = 0.0455
+CosmologySimulationOmegaCDMNow          = 0.2275
+#CosmologySimulationInitialTemperature   = 140.0  // DEBATABLE
+CosmologySimulationDensityName          = GridDensity
+CosmologySimulationVelocity1Name        = GridVelocities
+CosmologySimulationVelocity2Name        = GridVelocities
+CosmologySimulationVelocity3Name        = GridVelocities
+CosmologySimulationParticlePositionName = ParticlePositions
+CosmologySimulationParticleVelocityName = ParticleVelocities
+CosmologySimulationNumberOfInitialGrids = 1
+CosmologySimulationUseMetallicityField  = 1
+
+#
+#  define cosmology parameters
+#
+ComovingCoordinates        = 1
+CosmologyOmegaMatterNow    = 0.273
+CosmologyOmegaLambdaNow    = 0.727
+CosmologyHubbleConstantNow = 0.702
+CosmologyComovingBoxSize   = 32.0
+CosmologyMaxExpansionRate  = 0.02
+CosmologyInitialRedshift   = 50
+CosmologyFinalRedshift     = 0
+GravitationalConstant      = 1
+
+#
+#  set I/O and stop/start parameters
+#
+
+dtDataDump       = 5
+RedshiftDumpName = RD
+RedshiftDumpDir  = RD
+DataDumpName     = DD
+DataDumpDir      = DD
+
+CosmologyOutputRedshift[0] = 0.100
+CosmologyOutputRedshift[1] = 0.089
+CosmologyOutputRedshift[2] = 0.078
+CosmologyOutputRedshift[3] = 0.067
+CosmologyOutputRedshift[4] = 0.057
+CosmologyOutputRedshift[5] = 0.047
+CosmologyOutputRedshift[6] = 0.037
+CosmologyOutputRedshift[7] = 0.027
+CosmologyOutputRedshift[8] = 0.017
+CosmologyOutputRedshift[9] = 0.007
+
+#
+#  set hydro parameters
+#
+Gamma                  = 1.6667
+PPMDiffusionParameter  = 0
+DualEnergyFormalism    = 0
+HydroMethod            = 2
+InterpolationMethod    = 1 
+CourantSafetyNumber    = 0.3
+ParticleCourantSafetyNumber    = 0.5
+UseMinimumPressureSupport = 0
+MultiSpecies           = 0
+RadiativeCooling       = 1
+RadiationFieldType     = 0
+FluxCorrection         = 1
+ConservativeInterpolation = 0
+
+#
+#  set grid refinement parameters
+#
+StaticHierarchy           = 0
+MaximumRefinementLevel    = 5
+MaximumGravityRefinementLevel = 5
+MaximumParticleRefinementLevel = 5
+RefineBy                  = 2
+CellFlaggingMethod        = 2 4
+MinimumEfficiency         = 0.35
+MinimumOverDensityForRefinement = 4.0 8.0
+MinimumMassForRefinementLevelExponent = 0.0 0.0
+
+StarParticleCreation          = 1
+StarParticleFeedback          = 1
+StarMakerOverDensityThreshold = 100
+StarMakerMinimumMass          = 1e6
+StarMakerMinimumDynamicalTime = 1e6
+StarMakerMassEfficiency       = 0.1
+StarMassEjectionFraction      = 0.25
+StarMetalYield                = 0.1
+StarEnergyToThermalFeedback   = 1e-5
+StarFeedbackRadius = 1
+StarFeedbackMaxCellStep = 3
+
+#
+#  set some global parameters
+#
+GreensFunctionMaxNumber   = 40
+
+ParallelRootGridIO = 1
+ParallelParticleIO = 1
