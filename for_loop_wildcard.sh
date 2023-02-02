@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for value in $1/*.sh
+do
+	echo $1
+	echo $value
+	cp $value $1/shell_backup/$( basename -s .sh $value ).sh
+done
+
+echo All done

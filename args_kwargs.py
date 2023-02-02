@@ -1,0 +1,41 @@
+import numpy as np
+
+def adder(x,y,z):
+    print("sum:", x+y+z)
+
+adder(10,12,13)
+
+def adder_arg(*num):
+    sum = np.sum(num)
+    print("sum:", sum)
+
+adder_arg(3,5)
+adder_arg(4,5,6,7)
+adder_arg(1,2,3,5,6)
+adder_arg(1,2,3,5,6,10)
+
+def intro(**data):
+    print("\nData type of argument:", type(data))
+
+    for key, value in data.items():
+        print("{} is {}".format(key, value))
+
+class employee():
+    def __init__(self, **kwargs):
+
+        self.name = kwargs['name']
+        self.ID = kwargs['ID']
+        self.information = kwargs
+
+        if not hasattr(self, 'name'):
+            raise KeyError("Name is required.")
+        if not hasattr(self, 'ID'):
+            raise KeyError("ID is required.")
+
+        print("{} is employed successfully".format(kwargs['name']))
+
+    def print_information(self):
+        print("The information of {} ({}) is:".format(self.name, self.ID))
+        print(self.information)
+
+print("This is test for update script")

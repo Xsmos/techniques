@@ -1,0 +1,6 @@
+#!/bin/bash
+
+read -p 'User name: ' uservar
+read -sp 'Password: ' passvar
+echo
+echo Thank you! We now have your login detail.

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+space_free=$( df -h | awk '{ print $5 }' | sort -n | tail -n 1 | sed 's/%//' )
+
+case $space_free in
+	[1-5]*)
+		echo plenty of disk space available.
+		;;
+	[6-7]*)
+		echo There could be a problem in a near future.
+		;;
+	8*)
+		echo we should look at clearing some old files
+		;;
+	9*)
+		echo We are going to have a serious problem on hands soon.
+		;;
+	*)
+		echo I got a nonnumber input.
+		;;
+esac
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+message=$@
+input_length=${#message}
+
+cols=$( tput cols )
+rows=$( tput lines )
+
+middle_row=$(( $rows / 2 ))
+middle_col=$(( ($cols - $input_length)/2 ))
+
+tput clear
+
+tput cup $middle_row $middle_col
+tput bold
+
+echo $message
+
+tput sgr0
+
+tput cup $( tput lines ) 0
